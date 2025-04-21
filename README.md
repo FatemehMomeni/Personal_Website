@@ -1,6 +1,6 @@
 # MIweb
 
-This project is a personal website. Ii's goal is to introduce us to whom need a website for any purpose...
+This project is a personal website. Iis goal is to introduce us to whom need a website for any purpose...
 
 ## Web Design and Development
 
