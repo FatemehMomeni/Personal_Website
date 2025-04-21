@@ -1,0 +1,116 @@
+.About {
+    display: grid;
+    grid-template-rows: 0.1fr 1.7fr 2fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.About--mainImg {
+    grid-column: 1 / span 2;    
+    background-image: url('aboutUs.jpg');
+    background-size: 100% 100%;
+    background-color: #ced6e0;
+    background-blend-mode: overlay;    
+    mix-blend-mode:multiply;
+    overflow: hidden;
+}
+
+.About--container {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    width: 85%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.About--column {
+    border: 1px solid var(--primary);
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;    
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;    
+}
+
+#firstCol {    
+    border-top-left-radius: 50px;        
+    background-image: linear-gradient(to right, rgba(255, 204, 204, 0.6), rgba(255, 204, 204, 1));
+}
+
+#secondCol {
+    border-bottom-right-radius: 50px;
+    background-image: linear-gradient(to left, rgba(255, 204, 204, 0.6), rgba(255, 204, 204, 1));
+}
+
+.About--avatarImg {
+    width: 20%;
+    mix-blend-mode:multiply;
+}
+
+.About--column p {
+    font-size: 1.3em;
+    padding-top: 18px;
+}
+
+.About--container ul {    
+    font-size: 1.2em;
+    border-radius: 50px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+.About--container .up {
+    border-bottom-left-radius: 0;
+    background-image: linear-gradient(to left, rgba(236, 240, 241, 0.4), rgba(236, 240, 241, 1));
+}
+
+.About--container .down {
+    direction: rtl;
+    border-top-right-radius: 0;
+    padding-left: 0;
+    background-image: linear-gradient(to right, rgba(236, 240, 241, 0.4), rgba(236, 240, 241, 1));
+}
+
+.About--container ul li span {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 0.8em;
+}
+
+.About--container ul li::marker {
+    color: var(--primary);
+}
+
+@media screen and (max-width: 768px) {
+    .About {
+        grid-template-rows: 0.1fr 0.6fr 2fr;
+    }    
+
+    .About--container {        
+        grid-template-columns: repeat(1, 1fr);        
+    }   
+
+    .About--container .up {
+        margin-bottom: 2px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 50px;
+        background-image: linear-gradient(to left, rgba(236, 240, 241, 0.4), rgba(236, 240, 241, 1));
+    }
+
+    .About--container .down {
+        margin-top: 2px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 0;
+        background-image: linear-gradient(to right, rgba(236, 240, 241, 0.4), rgba(236, 240, 241, 1));
+    }
+}

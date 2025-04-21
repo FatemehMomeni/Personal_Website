@@ -1,0 +1,101 @@
+.Header {
+    font-family: var(--title-font);
+    font-weight: var(--title-weight);
+    font-optical-sizing: var(--title-optical-sizeing);    
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;    
+}
+
+.Header--tabs {
+    direction: rtl;
+    border-bottom: 2px solid var(--primary);
+    border-bottom-left-radius: 15px;    
+    padding: 18px 7px 13px 9px;
+    list-style-type: none;    
+    background-image: linear-gradient(to left, #ecf0f1,  #ffcccc);
+    margin-bottom: 0;
+    margin-top: 0;
+    width: 100%;
+    display: grid;     
+    justify-content: start;
+    grid-template-rows: 1fr;
+    grid-template-columns: max-content max-content max-content max-content;   
+}
+
+.Header--link {
+    text-decoration: none;
+    color: var(--secondary);
+    padding: 20px 15px;
+    margin: 0 2px;
+}
+
+.Header--item :hover {
+    color: var(--primary);    
+    transition-duration: 400ms;
+}
+
+.active {
+    border: 2px solid var(--primary);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;    
+    background-color: white;
+    color: var(--primary);
+}
+
+.Header--logoImg {
+    height: 5%;
+    width: 5%;
+    margin-top: 0.1%;
+    animation: fadeIn 7s infinite;
+}
+
+@keyframes fadeIn {
+    0%  { margin-left: -60%; }
+    25%  { margin-left: 0.4%; }
+    50% { margin-left: 0.4%; }
+    100% { margin-left: -60%; }
+}
+
+@media screen and (max-width: 600px) {
+    .Header {
+        font-size: 0.8em;
+    }
+
+    .Header--tabs {
+        direction: ltr;
+        padding: 5px 10px 2px 9px;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: max-content max-content max-content max-content;
+        align-content: space-around;
+    }
+    
+    .Header--tabs li {
+        display: flex;
+        justify-content: end;
+        grid-column: 2 / 3;
+    }
+    
+    .Header--link {
+        padding: 1px 0;
+        margin: 0 5px;
+    }
+
+    .active {
+        border: 1px solid var(--primary);
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 0; 
+        padding: 1px 5px 0 5px; 
+    }
+    
+    .Header--logoImg {
+        grid-row: 1 / span 4;
+        grid-column: 1 / 2;       
+        width: 30%;
+        height: 70%;
+        margin: auto 0;
+    }
+}

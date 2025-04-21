@@ -1,8 +1,7 @@
-body {
+body {  
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, rgba(196, 69, 105, 0.4), rgba(44, 62, 80, 0.4));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +9,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --title-font: "El Messiri", sans-serif;
+  --title-optical-sizing: auto;
+  --title-weight: 600;
+  --primary: #c44569;
+  --secondary: #2c3e50;
+}
+
+.el-messiri {
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }

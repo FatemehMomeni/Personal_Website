@@ -1,0 +1,36 @@
+.Footer {
+    bottom: 0;
+    border-top: 1px solid var(--secondary);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 5% 5% 5%;
+    justify-content: center;
+}
+
+.Footer img {
+    width: 50%;
+    margin-top: 5px;
+    cursor: pointer;
+    filter: invert(21%) sepia(28%) saturate(689%) hue-rotate(169deg) brightness(92%) contrast(90%);
+}
+
+.Footer img:hover {
+    filter: invert(40%) sepia(19%) saturate(1866%) hue-rotate(292deg) brightness(92%) contrast(94%);
+    transition-duration: 200ms;
+}
+
+@media screen and (max-width: 768px) {
+    .Footer {
+        grid-template-columns: 7% 7% 7%;
+        padding-top: 5px;
+    }
+
+    .Footer img {
+        width: 80%;
+        margin: 0;
+    }   
+}
