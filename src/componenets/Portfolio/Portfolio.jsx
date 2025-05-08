@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import Layout from "../Layout/Layout";
 import Space from "../Space/Space";
 import "./Portfolio.css";
@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 
 
 const Portfolio = () => {
-    const [data, setData] = useState(websites);
+    const data = websites;
     const isMedum = useMediaQuery({ query: '(max-width: 992px)' });
 
     return(
@@ -19,8 +19,7 @@ const Portfolio = () => {
                 <div className="Portfolio--container">
                     {data.map((item, index) => (
                         <div className={`Portfolio--${index % 2 === 0 ? `primary` : `secondary`} outer`} 
-                        id={!isMedum ? `${index % 2 === 0 ? `left` : `right`}` : ''}
-                        // id={`${index % 2 === 0 ? `left` : `right`}`}
+                        id={!isMedum ? `${index % 2 === 0 ? `left` : `right`}` : ''}                        
                         style={{ borderTop: index === 0 ? '1px solid #2c3e50' : 'none',
                             borderBottom: index === data.length -1 ? 
                             index % 2 === 0 ? '2px solid #2c3e50' : '2px solid #c44569'
