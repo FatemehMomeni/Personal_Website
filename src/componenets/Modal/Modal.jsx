@@ -7,8 +7,8 @@ const Modal = ({isOpen, onClose, children}) => {
     if (!isOpen) return null;
 
     return (
-        <div className="OpenModal" onClick={onClose}>
-            <div className="Thanks">{children}</div>
+        <div className="Modal" onClick={onClose}>
+            <div className="Modal--text">{children}</div>
         </div>
     );
 };

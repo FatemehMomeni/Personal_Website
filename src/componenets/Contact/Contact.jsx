@@ -15,6 +15,7 @@ import { validateSubject } from "../../utils/validation";
 import validator from "validator";
 import Button from "../Button/Button";
 import { useMediaQuery } from 'react-responsive';
+import axios from "axios";
 
 
 const Contact = () => {
@@ -24,11 +25,12 @@ const Contact = () => {
     const [errors, setErrors] = useState({});
     const [openModal, setOpenModal] = useState(false);    
     const isMedum = useMediaQuery({ query: '(max-width: 670px)' });
+    // const [details, setDetails] = useState([]);
 
     const handleSubject = (event) => {        
         if (validateSubject(event.target.value)){
             setSubject(event.target.value);
-            console.log("subject: ", subject);
+            // console.log("subject: ", subject);
             setErrors({
                 ...errors,
                 subject: null
@@ -44,7 +46,7 @@ const Contact = () => {
     const handelEmail = (event) => {                
         if (validator.isEmail(event.target.value)){
             setEmail(event.target.value);
-            console.log("email", email);
+            // console.log("email", email);
             setErrors({
                 ...errors,
                 email: null
@@ -59,16 +61,31 @@ const Contact = () => {
 
     const handleMessage = (event) => {
         setMessage(event.target.value);
-        console.log("message: ", message);
+        // console.log("message: ", message);
     };
     
     const handleCloseModal = () => {
         setOpenModal(false);
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = () => {        
+        axios.post('http://localhost:8000/MIweb/', 
+            {msgSubject: subject, emailAddress: email, messageText: message}).then(
+                (res) => {
+                    setSubject('');
+                    setEmail('');
+                    setMessage('');
+                }).catch((err) => {})
         setOpenModal(true);        
     };
+
+    // useEffect(() => {
+    //     let data;
+    //     axios.get('http://localhost:8000/MIweb/').then((res) => {
+    //         data = res.data;
+    //         setDetails(data);
+    //     }).catch((err) => {});
+    // });
 
     return(
         <Layout>

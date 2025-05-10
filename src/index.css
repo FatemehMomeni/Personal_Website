@@ -2,6 +2,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background-image: linear-gradient(to bottom right, rgba(196, 69, 105, 0.4), rgba(44, 62, 80, 0.4));
+  font-family: "Zain", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

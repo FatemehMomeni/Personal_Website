@@ -1,4 +1,4 @@
-.OpenModal {
+.Modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@
     justify-content: center;
 }
 
-.Thanks {
+.Modal--text {
     background-color: #ecf0f1;    
     height: 75px;
     width: 250px;
